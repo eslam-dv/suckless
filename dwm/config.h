@@ -14,11 +14,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "RobotoMono Nerd Font Propo:size=10:style=Bold","monospace:size=10" };
 static const char dmenufont[]       = "RobotoMono Nerd Font Mono:size=10:style=Medium";
-static const char col_gray1[]       = "#24273a";
-static const char col_gray2[]       = "#5b6078";
-static const char col_gray3[]       = "#cad3f5";
-static const char col_gray4[]       = "#181926";
-static const char col_cyan[]        = "#cba6f7";
+static const char col_gray1[]       = "#2b2d3a";
+static const char col_gray2[]       = "#7e8294";
+static const char col_gray3[]       = "#e1e3e4";
+static const char col_gray4[]       = "#181a1c";
+static const char col_cyan[]        = "#6dcae8";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -35,11 +35,13 @@ static const Rule rules[] = {
 	 */
 	/* class                  instance    title       tags mask     isfloating   monitor */
 	{ "zen-alpha",            NULL,       NULL,       1 << 1,       0,           -1 },
+  { "thunderbird-default",  NULL,       NULL,       1 << 3,       0,           -1 },
+  { "Mail",                 NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Pcmanfm",              NULL,       NULL,       1 << 2,       0,           -1 },
  	{ "Lxappearance",         NULL,       NULL,       0,            1,           -1 },
 	{ "Nitrogen",             NULL,       NULL,       0,            1,           -1 },
 	{ "Pavucontrol",          NULL,       NULL,       0,            1,           -1 },
-
+  { "Xarchiver",            NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -78,6 +80,7 @@ static const char *volup[]            = { "pamixer", "-i", "5", NULL };
 static const char *voldown[]          = { "pamixer", "-d", "5", NULL };
 static const char *volmute[]          = { "pamixer", "-t", NULL };
 static const char *micmute[]          = { "pamixer", "-t", "--default-source", NULL };
+static const char *lock[]             = { "betterlockscreen", "-l", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -85,7 +88,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = filescmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
-  { 0,               XF86XK_MonBrightnessUp, spawn,          {.v = brightnessup}},
+	{ MODKEY,                       XK_l,      spawn,          {.v = lock } },
+  { 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = brightnessup}},
   { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = brightnessdown}},
   { 0,             XF86XK_AudioRaiseVolume,  spawn,          {.v = volup} },
   { 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = voldown} },
