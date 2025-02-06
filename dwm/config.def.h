@@ -34,12 +34,15 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                  instance    title       tags mask     isfloating   monitor */
-	{ "zen-beta",             NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "zen",                  NULL,       NULL,       1 << 1,       0,           -1 },
   { "Pcmanfm",              NULL,       NULL,       1 << 2,       0,           -1 },
   { "discord",              NULL,       NULL,       1 << 3,       0,           -1 },
   { "thunderbird-default",  NULL,       NULL,       1 << 4,       0,           -1 },
+
  	{ "Lxappearance",         NULL,       NULL,       0,            1,           -1 },
+ 	{ "Galculator",         NULL,       NULL,       0,            1,           -1 },
  	{ "mpv",                  NULL,       NULL,       0,            1,           -1 },
+  { "Ristretto",            NULL,       NULL,       0,            1,           -1 },
 	{ "Nitrogen",             NULL,       NULL,       0,            1,           -1 },
 	{ "Pavucontrol",          NULL,       NULL,       0,            1,           -1 },
   { "Xarchiver",            NULL,       NULL,       0,            1,           -1 },
